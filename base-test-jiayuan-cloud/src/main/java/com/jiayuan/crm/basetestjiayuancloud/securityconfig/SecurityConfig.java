@@ -14,7 +14,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests() //定义哪些url需要保护，哪些url不需要保护
-                .antMatchers("/","hello").permitAll() //定义不需要认证就可以访问
+                .antMatchers("/","eureka").permitAll() //定义不需要认证就可以访问
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
