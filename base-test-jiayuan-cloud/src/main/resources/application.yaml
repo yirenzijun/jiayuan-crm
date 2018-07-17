@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: hello-service
+
+server:
+  port: 8000
+
+#使用ip
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://peer1:1111/eureka/,http://peer2:1112/eureka/
+  instance:
+    prefer-ip-address: false

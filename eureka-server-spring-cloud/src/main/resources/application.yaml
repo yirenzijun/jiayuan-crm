@@ -20,7 +20,7 @@ eureka:
   client:
     service-url:
       # 将自己注册到peer2、peer3这个Eureka上面去
-      defaultZone: http://peer2:1111/eureka/
+      defaultZone: http://peer2:1112/eureka/
 ---
 server:
   port: 1112
