@@ -1,0 +1,36 @@
+spring:
+  application:
+    name: eureka-server
+
+server:
+  port: 1111
+#指定peofile=peer1
+spring:
+  profiles:
+    active: peer1
+eureka:
+  instance:
+    hostname: peer1
+  client:
+    service-url:
+    # 将自己注册到peer2上去
+      defaultZone: http://peer2:1112/eureka/
+
+server:
+  port: 1112
+#指定peofile=peer2
+spring:
+  profiles:
+    active: peer2
+eureka:
+  instance:
+    hostname: peer2
+  client:
+    service-url:
+    # 将自己注册到peer1上去
+      defaultZone: http://peer1:1111/eureka/
+
+
+book:
+  name: 搜神记
+  author: 树下野狐
