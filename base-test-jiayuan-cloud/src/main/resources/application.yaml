@@ -2,8 +2,13 @@ spring:
   application:
     name: hello-service
 
+#server:
+#  port: 8000
 server:
-  port: 8000
+  port: 0
+#使用此随机方式，会导致注册的服务端口和启动时候的端口不一致
+#  port: ${random.int[8000,8010]}
+
 
 #使用ip
 
@@ -12,4 +17,12 @@ eureka:
     serviceUrl:
       defaultZone: http://peer1:1111/eureka/,http://peer2:1112/eureka/
   instance:
-    prefer-ip-address: false
+    prefer-ip-address: true
+    #服务续约任务的调用间隔时间，默认为30秒
+    #lease-renewal-interval-in-seconds: 30
+    #服务失效的时间，默认为90秒
+    #lease-expiration-duration-in-seconds: 90
+    #实例id
+    instance-id: ${spring.application.name}:${random.int}}
+#    hostname: localhost
+

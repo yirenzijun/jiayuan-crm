@@ -4,4 +4,7 @@ include(
         'base-tools-spring-cloud',
         'base-views-spring-cloud',
         'eureka-server-spring-cloud',
-        'base-test-jiayuan-cloud')
+        'base-test-jiayuan-cloud',
+        'ribbon-consumer-jiayuan-cloud',
+        'feign-consumer-jiayuan-cloud',
+        'base-service-spring-cloud')
